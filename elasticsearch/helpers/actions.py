@@ -117,7 +117,7 @@ class _ActionChunker:
 
         if data is not None:
             data = self.serializer.dumps(data)
-            cur_size += len(data.encode("utf-8")) + 1
+            cur_size += len(data.encode("utf-8", "surrogatepass")) + 1
 
         # full chunk, send it and start a new one
         if self.bulk_actions and (
